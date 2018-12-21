@@ -7,12 +7,11 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Button, Platform, StyleSheet, Text, View} from 'react-native';
 
 import { Sentry } from 'react-native-sentry';
 
 Sentry.config('https://72d857bcfa5541cea22ebcdc8cca73cf@sentry.io/1357781').install();
-
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,13 +20,18 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  niceCrash = () => {
+    const a = {}
+    a.b.c = true // js crash report should show this line
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Button title="CRASH JS" onPress={this.niceCrash} />
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
