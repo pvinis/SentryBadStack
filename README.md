@@ -1,3 +1,5 @@
+Issue: https://github.com/getsentry/react-native-sentry/issues/526
+
 # steps I took to setup this repo:
 - `react-native init SentryBadStack`
 - `cd SentryBadStack`
