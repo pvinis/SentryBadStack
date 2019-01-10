@@ -11,7 +11,9 @@ import {NativeModules, Button, Platform, StyleSheet, Text, View} from 'react-nat
 
 import { Sentry } from 'react-native-sentry';
 
-Sentry.config('https://72d857bcfa5541cea22ebcdc8cca73cf@sentry.io/1357781').install();
+Sentry.config('https://72d857bcfa5541cea22ebcdc8cca73cf@sentry.io/1357781', {
+  deactivateStacktraceMerging: false,
+}).install();
 
 const CoolCrash = NativeModules.CoolCrash
 
