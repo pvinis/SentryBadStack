@@ -1,3 +1,5 @@
+# UPDATE: This should be fixed on this [PR](https://github.com/facebook/react-native/pull/23691) and it will land on RN 0.60.0
+
 Issue: https://github.com/getsentry/react-native-sentry/issues/526
 
 # steps I took to setup this repo:
